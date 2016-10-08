@@ -5,12 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2/index';
 import { firebaseConfig } from './../environments/firebase.config';
+import { TrainingsComponent } from './trainings/trainings.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TrainingsComponent
   ],
   imports: [
     BrowserModule,
