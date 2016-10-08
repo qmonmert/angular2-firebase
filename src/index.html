@@ -10,5 +10,27 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
+
+  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA2n9YUORKUMW2P-2vkhrc6R6X-NkGmaZY",
+      authDomain: "popping-fire-9851.firebaseapp.com",
+      databaseURL: "https://popping-fire-9851.firebaseio.com",
+      storageBucket: "popping-fire-9851.appspot.com",
+      messagingSenderId: "923784914853"
+    };
+    firebase.initializeApp(config);
+
+    var root = firebase.database().ref('trainings');
+
+    root.on('value', function(snap) {
+
+      console.log(snap.key, snap.val());
+
+    });
+  </script>
+
 </body>
 </html>
