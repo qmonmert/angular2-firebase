@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { initializeApp, database } from 'firebase';
-import { firebaseConfig } from './../environments/firebase.config';
+import { AngularFire, FirebaseListObservable } from 'angularfire2/index';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +9,14 @@ import { firebaseConfig } from './../environments/firebase.config';
 export class AppComponent {
   title = 'app works!';
 
-  constructor() {
-    initializeApp(firebaseConfig);
+  constructor(private af: AngularFire) {
 
-    var root = database().ref('trainings');
+    const trainings$ : FirebaseListObservable<any> = af.database.list('trainings');
 
-    root.on('value', function(snap) {
+    trainings$.subscribe(
+      val => console.log(val)
+    )
 
-      console.log(snap.key, snap.val());
-
-    });
   }
 
 }
