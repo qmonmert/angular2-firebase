@@ -15,7 +15,7 @@ export class AppComponent {
 
     trainings$.subscribe(
       val => console.log(val)
-    )
+    );
 
   }
 
