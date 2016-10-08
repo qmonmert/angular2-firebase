@@ -1,3 +1,9 @@
-<p>
-  trainings works!
-</p>
+<ul>
+  <li *ngFor="let training of trainings | async">
+    <ul>
+      <li>Type : {{ training.type }}</li>
+      <li>Distance : {{ training.distance }}</li>
+      <li>Time : {{ training.time }}</li>
+    </ul>
+  </li>
+</ul>

@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2/index';
 
 @Component({
   selector: 'app-trainings',
   templateUrl: './trainings.component.html',
   styleUrls: ['./trainings.component.css']
 })
-export class TrainingsComponent implements OnInit {
+export class TrainingsComponent {
 
-  constructor() { }
+  trainings: FirebaseListObservable<any>;
 
-  ngOnInit() {
+  constructor(private af: AngularFire) { 
+
+    this.trainings = af.database.list('trainings');
+
+    this.trainings.subscribe(
+      val => console.log(val)
+    );
+
   }
 
 }
