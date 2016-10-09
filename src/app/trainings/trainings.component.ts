@@ -3,8 +3,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2/index';
 
 @Component({
   selector: 'app-trainings',
-  templateUrl: './trainings.component.html',
-  styleUrls: ['./trainings.component.css']
+  templateUrl: './trainings.component.html'
 })
 export class TrainingsComponent {
 
