@@ -5,6 +5,8 @@ import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2/index';
 import { firebaseConfig } from './../environments/firebase.config';
 
+import { MaterialModule } from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { TrainingsComponent } from './trainings/trainings.component';
 
@@ -15,7 +17,8 @@ import { TrainingsComponent } from './trainings/trainings.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    MaterialModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
